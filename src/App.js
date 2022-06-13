@@ -14,19 +14,14 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          {/* {localStorage.getItem("userId") === null? ( */}
             <>
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/signup" element={<Signup />} />
-            </>
-          // ) : (
-            <>
-            <Route exact path="/reset-password" element={<ResetPassword />} />
-            <Route exact path="/forgot-password" element={<ForgotPassword />} />
-            <Route exact path="/" element={<Home />} />
+              <Route exact path="/login" element={<Login />} />
+              <Route exact path="/signup" element={<Signup />} />
+              <Route exact path="/reset-password" element={<ResetPassword />} />
+              <Route exact path="/forgot-password" element={<ForgotPassword />} />
+              <Route exact path="/" element={<Home />} />
             
             </>
-          // )}
         </Routes>
       </BrowserRouter>
     </div>
