@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "antd/dist/antd.css";
+import Login from "./Pages/Login";
+import { Routes, Route, BrowserRouter, Redirect } from "react-router-dom";
+import Home from "./Pages/Home";
+import Signup from "./Pages/SignUp";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ResetPassword from "./Pages/ResetPassword";
+import ForgotPassword from "./Pages/ForgotPassword";
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          {/* {localStorage.getItem("userId") === null? ( */}
+            <>
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/signup" element={<Signup />} />
+            </>
+          // ) : (
+            <>
+            <Route exact path="/reset-password" element={<ResetPassword />} />
+            <Route exact path="/forgot-password" element={<ForgotPassword />} />
+            <Route exact path="/" element={<Home />} />
+            
+            </>
+          // )}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
